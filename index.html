@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>URL Status Checker</title>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    input[type="file"] { margin-bottom: 20px; }
+    #progress { margin-top: 10px; font-weight: bold; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  </style>
+</head>
+<body>
+  <h2>URL Status Checker</h2>
+  <input type="file" id="fileInput" accept=".xlsx" onchange="readExcel(event)" />
+  <div id="progress">Progress: 0 / 0</div>
+  <button onclick="downloadResults()">Download Results</button>
+  <table id="resultsTable">
+    <thead>
+      <tr><th>URL</th><th>Status</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script src="script.js"></script>
+</body>
+</html>
